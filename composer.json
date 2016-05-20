@@ -4,8 +4,19 @@
     "type": "library",
     "repositories" : [
         {
-            "type": "vcs",
-            "url": "https://github.com/powermonkey/zend-http"
+            "type": "package",
+			"package": {
+				"name": "zendframework/zend-http",
+				"version": "dev-master",
+				"source": {
+					"url": "https://github.com/powermonkey/zend-http",
+					"type": "git",
+					"reference": "master"
+				},
+				"autoload": {
+					"classmap": [""]
+				}
+			}
         }  
     ],
     "require": {
