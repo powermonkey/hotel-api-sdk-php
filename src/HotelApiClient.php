@@ -101,7 +101,8 @@ class HotelApiClient
         $this->httpClient = new Client();
         $this->httpClient->setOptions(
                 ["adapter" => "Zend\Http\Client\Adapter\Curl",
-                 "timeout" => $timeout]);
+                 "timeout" => $timeout,
+                 "sslverifypeer" => false]);
 
         UriFactory::registerScheme("https","hotelbeds\\hotel_api_sdk\\types\\ApiUri");
         $this->apiUri = UriFactory::factory($url);
