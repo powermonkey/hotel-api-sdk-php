@@ -2,23 +2,6 @@
     "name": "hotelbeds/hotel-api-sdk-php",
     "description": "Hotelbeds Hotel-API SDK for PHP",
     "type": "library",
-    "repositories" : [
-        {
-            "type": "package",
-			"package": {
-				"name": "zendframework/zend-http",
-				"version": "dev-master",
-				"source": {
-					"url": "https://github.com/powermonkey/zend-http",
-					"type": "git",
-					"reference": "master"
-				},
-				"autoload": {
-					"classmap": [""]
-				}
-			}
-        }  
-    ],
     "require": {
         "php": ">=5.5",
         "zendframework/zend-http": "^2.5",
