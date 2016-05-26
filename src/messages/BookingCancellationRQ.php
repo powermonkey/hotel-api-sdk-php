@@ -20,12 +20,15 @@ class BookingCancellationRQ extends ApiRequest
     /**
      * BookingCancellationRQ constructor.
      * @param ApiUri $baseUri
-     * @param string $bookingId
+     * @param array $data
      */
-    public function __construct(ApiUri $baseUri, $bookingId)
+    public function __construct(ApiUri $baseUri, $data)
     {
         parent::__construct($baseUri, self::BOOKING);
         $this->request->setMethod(Request::METHOD_DELETE);
-        $this->baseUri->setPath($baseUri->getPath()."/".self::BOOKING."/$bookingId");
+        $this->baseUri->setPath($baseUri->getPath()."/".self::BOOKING."/$data['bookingId']);
+        if(array_key_exists('cancellationFlag',$data)){
+			$this->baseUri->setQuery('cancellationFlag='.$data['cancellationFlag']);
+		}
     }
 }
