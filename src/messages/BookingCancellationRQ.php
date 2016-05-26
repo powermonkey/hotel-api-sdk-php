@@ -26,9 +26,9 @@ class BookingCancellationRQ extends ApiRequest
     {
         parent::__construct($baseUri, self::BOOKING);
         $this->request->setMethod(Request::METHOD_DELETE);
-        $this->baseUri->setPath($baseUri->getPath()."/".self::BOOKING."/$data['bookingId']);
+        $this->baseUri->setPath($baseUri->getPath()."/".self::BOOKING."/".$data['bookingId']);
         if(array_key_exists('cancellationFlag',$data)){
-			$this->baseUri->setQuery('cancellationFlag='.$data['cancellationFlag']);
-		}
+		$this->baseUri->setQuery('cancellationFlag='.$data['cancellationFlag']);
+	}
     }
 }
